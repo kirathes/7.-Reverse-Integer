@@ -1,0 +1,38 @@
+###########solution_01############
+class Solution:
+    def reverse(self, x: int) -> int:
+        a = abs(x)
+        num = 0
+        
+        # [-2147483648,2147483647]
+        # example x = 123
+        # a = 123
+        # num = 0
+        # First Iteration
+        # a = 12--->从原来的 a = 123中取出3
+        # num = 3
+        
+        # Second Iteration
+        # a = 1  --->从原来的 a = 12中取出2
+        # num = 32
+        
+        # Third Iteration
+        # a = 0  --->从原来的 a = 1中取出1~~~直到 a = 0,循环结束
+        # num = 321
+        # Finish
+        
+       
+        while(a != 0):
+            temp = a % 10
+            print('a',a)
+            num = num * 10 + temp
+            print('num',num)
+            a = a // 10 # a = int(a % 10)
+        
+        if x>0 and num < 2147483647:
+            return num
+        if x<0 and num <=2147483647:
+            return -num
+        else:
+            return 0
+      
