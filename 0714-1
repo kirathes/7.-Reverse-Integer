@@ -7,10 +7,13 @@ class Solution:
             temp = absolute_X % 10
             reverse_X = reverse_X * 10 + temp
             absolute_X = absolute_X // 10
-            
-        if x <= 0 and abs(x) <= 2**31 and reverse_X <= 2**31:
+        
+        # 可以不对输入的x范围做限制，但是必须对输出的值的范围做限制
+        if x <= 0 and reverse_X <= 2**31: 
+        # if x <= 0 and abs(x) <= 2**31 and reverse_X <= 2**31:
             return -reverse_X
-        if x > 0 and x <= 2**31-1 and reverse_X <= 2**31:
+        if x > 0 and reverse_X <= 2**31:
+        # if x > 0 and x <= 2**31-1 and reverse_X <= 2**31:
             return reverse_X
         else:
             return 0
