@@ -1,0 +1,18 @@
+# solve time cost: 4min
+class Solution:
+    def reverse(self, x: int) -> int:
+        absolute_x = abs(x)
+        reverse_x = 0
+        
+        while(absolute_x != 0):
+            temp = absolute_x % 10
+            reverse_x = reverse_x * 10 + temp
+            absolute_x = absolute_x // 10
+        
+        if x >= 0 and reverse_x <= 2**31-1:
+            return reverse_x
+        elif x < 0 and reverse_x <= 2**31:
+            return -reverse_x
+        else:
+            return 0
+        
