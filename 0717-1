@@ -15,4 +15,17 @@ class Solution:
             return -reverse_x
         else:
             return 0
+
+######### str reverse#########3
+class Solution:
+    def reverse(self, x: int) -> int:
+        ab = abs(x)
+        reverse = int(str(ab)[::-1])
+        
+        if x >= 0 and reverse <= 2**31-1:
+            return reverse
+        elif x < 0 and reverse <= 2**31:
+            return -reverse
+        else:
+            return 0
         
